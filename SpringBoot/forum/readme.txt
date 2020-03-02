@@ -14,3 +14,7 @@ padrão DTO (Data Transfer Object) // Utilizado para otimizar a comunicação en
 @PathVariable //Recebe parâmetros dinâmicos no path da URL.
 
 @PageableDefault //Indica o padrão de paginação/ordenação ao Spring, quando o cliente não enviar informações adicionais.
+@EnableCaching //Serve para habilitar o uso de cache na aplicação. Deve-se atribuir a anotação na Classe ForumApplication.
+@Cacheable //Guarda o retorno de um método no cache.
+@CacheEvict //Avisa o Spring quando deve atualizar o cache.
+@Override //Sobreposição de métodos.
