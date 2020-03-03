@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class Usuario implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
@@ -86,8 +87,7 @@ public class Usuario implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.perfis;
 	}
 
 	@Override
@@ -97,30 +97,26 @@ public class Usuario implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return email;
+		return this.email;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 

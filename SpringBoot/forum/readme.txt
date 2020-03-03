@@ -18,3 +18,18 @@ padrão DTO (Data Transfer Object) // Utilizado para otimizar a comunicação en
 @Cacheable //Guarda o retorno de um método no cache.
 @CacheEvict //Avisa o Spring quando deve atualizar o cache.
 @Override //Sobreposição de métodos.
+
+SecurityConfigurations // Configurações gerais de segurança
+AutenticacaoService //Classe gerenciada pelo spring, contém a lógica de autenticação.
+	UsuarioRepository //Lógica de acesso ao banco de dados. Possui o método que busca pelo e-mail.
+AutenticacaoController //Esse é o controller onde vai estar a lógica de autenticação. 
+	TokenService//Possui o método para gerar o token.
+LoginForm //Classe que recebe do cliente o json, contendo o e-mail e a senha.
+
+getPrincipal() //Usado para obter o nome de usuário do usuário conectado.
+getAuthorities() //Usado para obter as funções atribuídas do usuário autenticado.
+
+
+Usuario //É uma classe de dominio, que representa uma entidade de negócio (Ilustra / constrói um objeto).
+	@Entity //Transforma em uma entidade da classe jpa e gera uma tabela no banco para guardar os usuários.
+	UserDetails //Implementa-se  essa classe do spring, para determinar que esta classe representa o usuário.

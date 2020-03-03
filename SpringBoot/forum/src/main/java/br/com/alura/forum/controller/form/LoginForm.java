@@ -6,7 +6,7 @@ public class LoginForm {
 
 	private String email;
 	private String senha;
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -18,7 +18,7 @@ public class LoginForm {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
@@ -26,4 +26,5 @@ public class LoginForm {
 	public UsernamePasswordAuthenticationToken converter() {
 		return new UsernamePasswordAuthenticationToken(email, senha);
 	}
+
 }

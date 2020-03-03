@@ -26,7 +26,7 @@ public class AutenticacaoController {
 	
 	@Autowired
 	private TokenService tokenService;
-	
+
 	@PostMapping
 	public ResponseEntity<TokenDto> autenticar(@RequestBody @Valid LoginForm form) {
 		UsernamePasswordAuthenticationToken dadosLogin = form.converter();
@@ -39,4 +39,5 @@ public class AutenticacaoController {
 			return ResponseEntity.badRequest().build();
 		}
 	}
+	
 }
